@@ -1,1 +1,1 @@
-# easy_wills
+# EasierLivingWills
