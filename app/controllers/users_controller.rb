@@ -3,7 +3,7 @@ class UserController < ApplicationController
 	# GET /users
   # GET /users.json
   def index
-     redirect_to :users
+     redirect_to new_user_path
   end
 
   # GET /users/1
