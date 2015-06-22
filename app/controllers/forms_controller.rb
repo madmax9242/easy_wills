@@ -5,7 +5,6 @@ class FormsController < ApplicationController
 
 	def create
 		@form = Form.new(form_params)
-		#@form = @user.id
 		@form.user_id = current_user.id
 		@form.save
 
