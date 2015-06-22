@@ -18,14 +18,61 @@ ActiveRecord::Schema.define(version: 20150621221919) do
 
   create_table "forms", force: :cascade do |t|
     t.integer "user_id"
-    t.text    "gh_ami",   default: [], array: true
-    t.text    "gh_bi",    default: [], array: true
-    t.text    "dh_ami",   default: [], array: true
-    t.text    "dh_bi",    default: [], array: true
-    t.text    "esmc_ami", default: [], array: true
-    t.text    "esmc_bi",  default: [], array: true
-    t.text    "nhi_ami",  default: [], array: true
-    t.text    "nhi_bi",   default: [], array: true
+    t.boolean "gh_ami_cc_only",      default: false
+    t.boolean "gh_ami_cc_plus",      default: false
+    t.boolean "gh_ami_reg_med",      default: false
+    t.boolean "gh_ami_invasive",     default: false
+    t.boolean "gh_ami_respirator",   default: false
+    t.boolean "gh_ami_dialysis",     default: false
+    t.boolean "gh_bi_cpr",           default: false
+    t.boolean "gh_bi_cc_only",       default: false
+    t.boolean "gh_bi_cc_plus",       default: false
+    t.boolean "gh_bi_reg_med",       default: false
+    t.boolean "gh_bi_invasive",      default: false
+    t.boolean "gh_bi_respirator",    default: false
+    t.boolean "gh_bi_dialysis",      default: false
+    t.boolean "dh_ami_cc_only",      default: false
+    t.boolean "dh_ami_cc_plus",      default: false
+    t.boolean "dh_ami_reg_med",      default: false
+    t.boolean "dh_ami_invasive",     default: false
+    t.boolean "dh_ami_respirator",   default: false
+    t.boolean "dh_ami_dialysis",     default: false
+    t.boolean "dh_ami_cpr",          default: false
+    t.boolean "dh_bi_cc_only",       default: false
+    t.boolean "dh_bi_cc_plus",       default: false
+    t.boolean "dh_bi_reg_med",       default: false
+    t.boolean "dh_bi_invasive",      default: false
+    t.boolean "dh_bi_respirator",    default: false
+    t.boolean "dh_bi_dialysis",      default: false
+    t.boolean "dh_bi_cpr",           default: false
+    t.boolean "esmc_ami_cc_only",    default: false
+    t.boolean "esmc_ami_cc_plus",    default: false
+    t.boolean "esmc_ami_reg_med",    default: false
+    t.boolean "esmc_ami_invasive",   default: false
+    t.boolean "esmc_ami_respirator", default: false
+    t.boolean "esmc_ami_dialysis",   default: false
+    t.boolean "esmc_ami_cpr",        default: false
+    t.boolean "esmc_bi_cc_only",     default: false
+    t.boolean "esmc_bi_cc_plus",     default: false
+    t.boolean "esmc_bi_reg_med",     default: false
+    t.boolean "esmc_bi_invasive",    default: false
+    t.boolean "esmc_bi_respirator",  default: false
+    t.boolean "esmc_bi_dialysis",    default: false
+    t.boolean "esmc_bi_cpr",         default: false
+    t.boolean "nhi_ami_cc_only",     default: false
+    t.boolean "nhi_ami_cc_plus",     default: false
+    t.boolean "nhi_ami_reg_med",     default: false
+    t.boolean "nhi_ami_invasive",    default: false
+    t.boolean "nhi_ami_respirator",  default: false
+    t.boolean "nhi_ami_dialysis",    default: false
+    t.boolean "nhi_ami_cpr",         default: false
+    t.boolean "nhi_bi_cc_only",      default: false
+    t.boolean "nhi_bi_cc_plus",      default: false
+    t.boolean "nhi_bi_reg_med",      default: false
+    t.boolean "nhi_bi_invasive",     default: false
+    t.boolean "nhi_bi_respirator",   default: false
+    t.boolean "nhi_bi_dialysis",     default: false
+    t.boolean "nhi_bi_cpr",          default: false
   end
 
   create_table "users", force: :cascade do |t|

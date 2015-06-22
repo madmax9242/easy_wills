@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   get 'user_sessions/destroy'
 
   resources :users
+  resources :forms
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
