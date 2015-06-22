@@ -3,13 +3,13 @@
   <div class="field">
     <p><strong>1. My quality of health is similar to what it is now. i.e. I have no end-stage medical conditions and my mental faculties are intact. I am able to care for myself.</strong></p>
     <p>If I develop an acute medical illness that may be treated, and my doctors think I have a reasonable chance of surviving the illness and leaving the hospital, I wish the following: (Check any that apply:</p>
-    <%= f.check_box :gh_ami_cc_only,checked_value: 1,unchecked_value: 0 %>Comfort care only <br />
-    <%= f.check_box :gh_ami_cc_plus,checked_value: 1,unchecked_value: 0 %>Comfort care, to include intravenous fluids and tube feedings<br />
-    <%= f.check_box :gh_ami_reg_med,checked_value: 1,unchecked_value: 0 %>Regular medical care <br />
-    <%= f.check_box :gh_ami_invasive,checked_value: 1,unchecked_value: 0 %>Invasive procedures like surgery or heart catheterizations<br />
-    <%= f.check_box :gh_ami_respirator,checked_value: 1,unchecked_value: 0 %>Temporary support from a respirator<br />
-    <%= f.check_box :gh_ami_dialysis,checked_value: 1,unchecked_value: 0 %>Temporary support<br />
-    <%= f.check_box :gh_ami_cpr,checked_value: 1,unchecked_value: 0 %>CPR if my heart stops<br />
+    <%= f.check_box_tag 'gh_ami_cc_only', '1', @form.gh_ami_cc_only.include? %>Comfort care only <br />
+    <%= f.check_box :gh_ami_cc_plus,checked_value: "1",unchecked_value: "0" %>Comfort care, to include intravenous fluids and tube feedings<br />
+    <%= f.check_box :gh_ami_reg_med %>Regular medical care <br />
+    <%= f.check_box :gh_ami_invasive,checked_value: "1",unchecked_value: "0" %>Invasive procedures like surgery or heart catheterizations<br />
+    <%= f.check_box :gh_ami_respirator,checked_value: "1",unchecked_value: "0" %>Temporary support from a respirator<br />
+    <%= f.check_box :gh_ami_dialysis,checked_value: "1",unchecked_value: "0" %>Temporary support<br />
+    <%= f.check_box :gh_ami_cpr,checked_value: "1",unchecked_value: "0" %>CPR if my heart stops<br />
   </div>
   <div class="field">
     <p>If I suffer some form of brain injury (stroke, bleeding, cardiac arrest, etc.) that makes it unlikely I’ll ever regain the ability to make decisions for myself, I wish the following: (Check any that apply):</p>
