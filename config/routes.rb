@@ -6,6 +6,11 @@ Rails.application.routes.draw do
 
   get 'user_sessions/destroy'
 
+  # Set form path so alternative forms can't be hardcoded into URL
+  get 'form' => 'forms#show'
+  get 'form/edit' => 'forms#edit'
+  patch 'form' => 'forms#show'
+
   resources :users
   resources :forms
   # The priority is based upon order of creation: first created -> highest priority.

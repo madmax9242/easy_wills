@@ -1,19 +1,9 @@
-<p id="notice"><%= notice %></p>
+<h1>Welcome, <%= @user.first_name %></h1>
 
 <p>
-  <strong>Email:</strong>
-  <%= @user.email %>
+  <strong>Instructions: </strong>
+   <span>Please click the link below to begin filling out your Living Will.</span>
 </p>
 
-<p>
-  <strong>Crypted password:</strong>
-  <%= @user.crypted_password %>
-</p>
+<%= link_to 'Fill out form', new_form_path %>
 
-<p>
-  <strong>Salt:</strong>
-  <%= @user.salt %>
-</p>
-
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>

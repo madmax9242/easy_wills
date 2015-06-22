@@ -1,5 +1,7 @@
 <h1>Edit Form</h1>
 
+<% @form = Form.find(params[:id]) %>
+
 <%= render 'form' %>
 
-<%= link_to 'Show', show_form_path %>
+<%= link_to 'Show', @form %>

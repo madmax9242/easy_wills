@@ -5,6 +5,7 @@ class UserSessionsController < ApplicationController
   end
 
   def create
+    #Logs in user
   	if @user = login(params[:email], params[:password])
   		redirect_back_or_to(:users, notice: 'Login successful')
   	else
@@ -14,6 +15,7 @@ class UserSessionsController < ApplicationController
   end
 
   def destroy
+    #Logs out user
   	logout
   	redirect_to(:users, notice: 'Logged out!')
 
