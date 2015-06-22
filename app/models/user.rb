@@ -7,5 +7,5 @@ class User < ActiveRecord::Base
 
 	validates :email, uniqueness: true
 
-	has_one :form dependent: :delete
+	has_one :form, dependent: :destroy
 end

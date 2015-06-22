@@ -18,14 +18,62 @@ ActiveRecord::Schema.define(version: 20150621221919) do
 
   create_table "forms", force: :cascade do |t|
     t.integer "user_id"
-    t.text    "gh_ami",   default: [], array: true
-    t.text    "gh_bi",    default: [], array: true
-    t.text    "dh_ami",   default: [], array: true
-    t.text    "dh_bi",    default: [], array: true
-    t.text    "esmc_ami", default: [], array: true
-    t.text    "esmc_bi",  default: [], array: true
-    t.text    "nhi_ami",  default: [], array: true
-    t.text    "nhi_bi",   default: [], array: true
+    t.integer "gh_ami_cc_only",      default: 0
+    t.integer "gh_ami_cc_plus",      default: 0
+    t.integer "gh_ami_reg_med",      default: 0
+    t.integer "gh_ami_invasive",     default: 0
+    t.integer "gh_ami_respirator",   default: 0
+    t.integer "gh_ami_dialysis",     default: 0
+    t.integer "gh_ami_cpr",          default: 0
+    t.integer "gh_bi_cc_only",       default: 0
+    t.integer "gh_bi_cc_plus",       default: 0
+    t.integer "gh_bi_reg_med",       default: 0
+    t.integer "gh_bi_invasive",      default: 0
+    t.integer "gh_bi_respirator",    default: 0
+    t.integer "gh_bi_dialysis",      default: 0
+    t.integer "gh_bi_cpr",           default: 0
+    t.integer "dh_ami_cc_only",      default: 0
+    t.integer "dh_ami_cc_plus",      default: 0
+    t.integer "dh_ami_reg_med",      default: 0
+    t.integer "dh_ami_invasive",     default: 0
+    t.integer "dh_ami_respirator",   default: 0
+    t.integer "dh_ami_dialysis",     default: 0
+    t.integer "dh_ami_cpr",          default: 0
+    t.integer "dh_bi_cc_only",       default: 0
+    t.integer "dh_bi_cc_plus",       default: 0
+    t.integer "dh_bi_reg_med",       default: 0
+    t.integer "dh_bi_invasive",      default: 0
+    t.integer "dh_bi_respirator",    default: 0
+    t.integer "dh_bi_dialysis",      default: 0
+    t.integer "dh_bi_cpr",           default: 0
+    t.integer "esmc_ami_cc_only",    default: 0
+    t.integer "esmc_ami_cc_plus",    default: 0
+    t.integer "esmc_ami_reg_med",    default: 0
+    t.integer "esmc_ami_invasive",   default: 0
+    t.integer "esmc_ami_respirator", default: 0
+    t.integer "esmc_ami_dialysis",   default: 0
+    t.integer "esmc_ami_cpr",        default: 0
+    t.integer "esmc_bi_cc_only",     default: 0
+    t.integer "esmc_bi_cc_plus",     default: 0
+    t.integer "esmc_bi_reg_med",     default: 0
+    t.integer "esmc_bi_invasive",    default: 0
+    t.integer "esmc_bi_respirator",  default: 0
+    t.integer "esmc_bi_dialysis",    default: 0
+    t.integer "esmc_bi_cpr",         default: 0
+    t.integer "nhi_ami_cc_only",     default: 0
+    t.integer "nhi_ami_cc_plus",     default: 0
+    t.integer "nhi_ami_reg_med",     default: 0
+    t.integer "nhi_ami_invasive",    default: 0
+    t.integer "nhi_ami_respirator",  default: 0
+    t.integer "nhi_ami_dialysis",    default: 0
+    t.integer "nhi_ami_cpr",         default: 0
+    t.integer "nhi_bi_cc_only",      default: 0
+    t.integer "nhi_bi_cc_plus",      default: 0
+    t.integer "nhi_bi_reg_med",      default: 0
+    t.integer "nhi_bi_invasive",     default: 0
+    t.integer "nhi_bi_respirator",   default: 0
+    t.integer "nhi_bi_dialysis",     default: 0
+    t.integer "nhi_bi_cpr",          default: 0
   end
 
   create_table "users", force: :cascade do |t|
