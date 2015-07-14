@@ -7,9 +7,9 @@ Rails.application.routes.draw do
   get 'user_sessions/destroy'
 
   # Set form path so alternative forms can't be hardcoded into URL
-  get 'form' => 'forms#show'
-  get 'form/edit' => 'forms#edit'
-  patch 'form' => 'forms#show'
+  get 'forms' => 'forms#show'
+  get 'forms/edit' => 'forms#edit'
+  patch 'forms' => 'forms#show'
 
   resources :users
   resources :forms
