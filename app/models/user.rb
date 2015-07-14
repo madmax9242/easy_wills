@@ -8,4 +8,8 @@ class User < ActiveRecord::Base
 	validates :email, uniqueness: true
 
 	has_one :form, dependent: :destroy
+
+	def logged_in? 
+		@user
+	end
 end

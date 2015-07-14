@@ -1,5 +1,9 @@
 <h1>New User</h1>
 
-<%= render 'form' %>
+<% if logged_in? %>
+	Test
+<% else %>
+	<%= render 'form' %>
+<% end %>
 
 <%= link_to 'Back', users_path %>
