@@ -1,28 +1,71 @@
 
-<h1>Listing Users</h1>
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary btn-md" data-toggle="modal" data-target="#myModal">
+  Things to Remember
+</button>
 
-<table>
-  <thead>
-    <tr>
-      <th>Email</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Things to remember as you fill out this Living Will</h4>
+      </div>
+      <div class="modal-body">
+        <p>- Your living will is mainly used if you are unable to tell your doctors what care you want to receive at the time they need to know your wishes.  If you are able to discuss your condition with your doctors and decide what care you want to receive you will simply tell them what your wishes are.</p>
+        
+        <p>- For a person to safely decide the care they want to receive they must have <strong>Decision-making Capacity</strong>.  This means they must be able to understand the information their health care providers tell them and are able to use this information to make an informed decision about the medical care they want.</p>
 
-  <tbody>
-    <% @users.each do |user| %>
-      <tr>
-        <td><%= user.first_name %></td>
-        <td><%= user.last_name %></td>
-        <td><%= user.email %></td>
-        <td><%= link_to 'Show', user %></td>
-        <td><%= link_to 'Edit', edit_user_path(user) %></td>
-        <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+        <p>- Many people suffer from conditions that prevent them from having capacity.  This would include conditions like mental illness, dementia, severe learning disabilities and brain damage (strokes, brain trauma, etc.).  These conditions are often times permanent and the person may never be able to make their own health care decisions.</p>
 
-<br>
+        <p>- Some people may temporarily lose capacity if they become acuity ill, especially if they are sick enough to require hospitalization.  This can be a result of the illness itself.  Examples would be things like severe infections and acute strokes.  Loss of capacity can also result from the treatment for the acute illness, in particular medications.  Often times in these situations the person will regain the capacity to make their own decisions as they recover from the illness.</p>
 
-<%= link_to 'New User', new_user_path %>
+        <p>- If you are unable to tell your doctors what care you would want to receive they will look to your living will for guidance.  It is important to realize that a written living will can’t possibly prepare for all medical decisions that might have to be made for you.</p>
+
+        <p>- The best plan for making sure you receive the care you would want if you aren’t able to tell your doctors yourself is to pick someone to be your Medical Power of Attorney (MPOA).  An MPOA is the person you have legally designated to make your medical decisions for you if you temporarily or permanently lose capacity. Your MPOA can make any health care decision for you that you would make for yourself.</p>
+
+        <p>- Your MPOA can use your living will to help them decide what care you would want to receive given your medical situation.  But it is important that you talk with your MPOA while you still have capacity and discuss the common decisions that may have to be made near the end of your life.  You can also use this living will to guide these talks with your MPOA.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+<% if logged_in? %>
+<h1>Introduction</h1>
+
+  <p>
+
+    <p><strong>Current Quality of Life</strong></p>
+   <p>First, let’s see how you would describe your current quality of life.</p>
+
+    <p><strong>Why is this important?</strong>  It is not unusual for several years to have passed from the time a person filled out their living will and when it is first needed to help decide how to treat them medically.  Sometimes a person’s quality of life may have changed significantly over that time.  If their quality of life has gotten significantly worse they may now not want to be treated as aggressively as they indicated in their living will.</p>
+
+    <p>While a person should ideally complete a new living will any time their quality of life changes significantly most people forget to do 
+    so. If you have been hospitalized and your surrogate and doctors are using your living will to help determine what care you would want it could be helpful to them if they knew that your quality of life was now much worse than when you completed your living will.</p>
+  </p>
+
+  <form>
+    <input type="radio" name="quality-of-life" value="excellent"><strong>Excellent:</strong>  I am able to fully care for myself and have no limitations on what I am able to do.<br><br>
+    <input type="radio" name="quality-of-life" value="good"><strong>Good:</strong> I am able to fully care for myself and can do most things I would want to do.<br><br>
+    <input type="radio" name="quality-of-life" value="acceptable"><strong>Acceptable:</strong>  I need assistance with activities of daily living (bathing, dressing, using the toilet, etc.).  I am also limited in the things I can do but can still do things that are important to me.<br><br>
+    <input type="radio" name="quality-of-life" value="poor"><strong>Poor:</strong>  I need assistance with most activities of daily living and I can do very few things that are important to me.<br><br>
+    <input type="radio" name="quality-of-life" value="good"><strong>Unacceptable:</strong>  Most days I can’t do anything that is important to me or gives me joy.<br><br>
+
+    Click the link below to continue to the Living Will Form.<br><br>
+
+    <%= link_to 'Fill out form', new_form_path %>
+
+
+  </form>
+
+  
+<% else %>
+  <p>Click the link below to register a new profile and start your Living Will.</p>
+
+  <%= link_to 'New User', new_user_path %>
+
+<% end %>
