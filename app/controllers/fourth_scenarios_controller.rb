@@ -12,11 +12,11 @@ class FourthScenariosController < ApplicationController
 
 		respond_to do |format|
 			if @fourth_scenario.save
-				fourth_scenarioat.html { redirect_to @fourth_scenario, notice: 'fourth_scenario was successfully created.' }
-				fourth_scenarioat.json { render :show, status: :created, location: @fourth_scenario }
+				format.html { redirect_to @fourth_scenario, notice: 'fourth_scenario was successfully created.' }
+				format.json { render :show, status: :created, location: @fourth_scenario }
 			else
-				fourth_scenarioat.html { render :new }
-				fourth_scenarioat.json { render json: @fourth_scenario.errors, status: :unprocessable_entity }
+				format.html { render :new }
+				format.json { render json: @fourth_scenario.errors, status: :unprocessable_entity }
 			end
 		end
 	end
@@ -29,11 +29,11 @@ class FourthScenariosController < ApplicationController
 		@fourth_scenario = fourth_scenario.find(params[:id])
 		respond_to do |format|
 			if @fourth_scenario.update(fourth_scenario_params)
-		    	fourth_scenarioat.html { redirect_to @fourth_scenario, notice: 'fourth_scenario was successfully updated.' }
-		    	fourth_scenarioat.json { render :show, status: :ok, location: @fourth_scenario }
+		    	format.html { redirect_to @fourth_scenario, notice: 'fourth_scenario was successfully updated.' }
+		    	format.json { render :show, status: :ok, location: @fourth_scenario }
 			else
-		    	fourth_scenarioat.html { render :edit }
-		    	fourth_scenarioat.json { render json: @fourth_scenario.errors, status: :unprocessable_entity }
+		    	format.html { render :edit }
+		    	format.json { render json: @fourth_scenario.errors, status: :unprocessable_entity }
 		  	end
 		end
 	end
@@ -41,9 +41,9 @@ class FourthScenariosController < ApplicationController
 	def destroy
 		#Destroys fourth_scenario
 		@fourth_scenario.destroy
-		respond_to do |fourth_scenarioat|
-		  fourth_scenarioat.html { redirect_to users_url, notice: 'fourth_scenario was successfully destroyed.' }
-		  fourth_scenarioat.json { head :no_content }
+		respond_to do |format|
+		  format.html { redirect_to users_url, notice: 'fourth_scenario was successfully destroyed.' }
+		  format.json { head :no_content }
 		end
 	end
 

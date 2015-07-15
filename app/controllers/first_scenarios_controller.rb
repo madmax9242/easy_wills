@@ -1,55 +1,55 @@
 class FirstScenariosController < ApplicationController
 	def new
-		#Makes a new form, but does not save to database
-		@form = Form.new
+		#Makes a new first_scenario, but does not save to database
+		@first_scenario = first_scenario.new
 	end
 
 	def create
-		#Makes and saves new form to database
-		@form = Form.new(form_params)
-		@form.user_id = current_user.id
-		@form.save
+		#Makes and saves new first_scenario to database
+		@first_scenario = first_scenario.new(first_scenario_params)
+		@first_scenario.user_id = current_user.id
+		@first_scenario.save
 
 		respond_to do |format|
-			if @form.save
-				format.html { redirect_to @form, notice: 'Form was successfully created.' }
-				format.json { render :show, status: :created, location: @form }
+			if @first_scenario.save
+				format.html { redirect_to @first_scenario, notice: 'first_scenario was successfully created.' }
+				format.json { render :show, status: :created, location: @first_scenario }
 			else
 				format.html { render :new }
-				format.json { render json: @form.errors, status: :unprocessable_entity }
+				format.json { render json: @first_scenario.errors, status: :unprocessable_entity }
 			end
 		end
 	end
 
 	def show
-		@form = Form.find(params[:id])
+		@first_scenario = first_scenario.find(params[:id])
 	end
 
 	def update
-		@form = Form.find(params[:id])
+		@first_scenario = first_scenario.find(params[:id])
 		respond_to do |format|
-			if @form.update(form_params)
-		    	format.html { redirect_to @form, notice: 'Form was successfully updated.' }
-		    	format.json { render :show, status: :ok, location: @form }
+			if @first_scenario.update(first_scenario_params)
+		    	format.html { redirect_to @first_scenario, notice: 'first_scenario was successfully updated.' }
+		    	format.json { render :show, status: :ok, location: @first_scenario }
 			else
 		    	format.html { render :edit }
-		    	format.json { render json: @form.errors, status: :unprocessable_entity }
+		    	format.json { render json: @first_scenario.errors, status: :unprocessable_entity }
 		  	end
 		end
 	end
 
 	def destroy
-		#Destroys form
-		@form.destroy
+		#Destroys first_scenario
+		@first_scenario.destroy
 		respond_to do |format|
-		  format.html { redirect_to users_url, notice: 'Form was successfully destroyed.' }
+		  format.html { redirect_to users_url, notice: 'first_scenario was successfully destroyed.' }
 		  format.json { head :no_content }
 		end
 	end
 
 	private
 		#Defines which parameters can be passed into the database
-		def form_params
-			params.require(:form).permit(:user_id, :gh_ami_cc_only, :gh_ami_cc_plus, :gh_ami_reg_med, :gh_ami_invasive, :gh_ami_respirator, :gh_ami_dialysis, :gh_ami_cpr,:gh_bi_cc_only, :gh_bi_cc_plus, :gh_bi_reg_med, :gh_bi_invasive, :gh_bi_respirator, :gh_bi_dialysis, :gh_bi_cpr,:dh_ami_cc_only, :dh_ami_cc_plus, :dh_ami_reg_med, :dh_ami_invasive, :dh_ami_respirator, :dh_ami_dialysis, :dh_ami_cpr,:dh_bi_cc_only, :dh_bi_cc_plus, :dh_bi_reg_med, :dh_bi_invasive, :dh_bi_respirator, :dh_bi_dialysis, :dh_bi_cpr, :esmc_ami_cc_only, :esmc_ami_cc_plus, :esmc_ami_reg_med, :esmc_ami_invasive, :esmc_ami_respirator, :esmc_ami_dialysis, :esmc_ami_cpr,:esmc_bi_cc_only, :esmc_bi_cc_plus, :esmc_bi_reg_med, :esmc_bi_invasive, :esmc_bi_respirator, :esmc_bi_dialysis, :esmc_bi_cpr, :nhi_ami_cc_only, :nhi_ami_cc_plus, :nhi_ami_reg_med, :nhi_ami_invasive, :nhi_ami_respirator, :nhi_ami_dialysis, :nhi_ami_cpr, :nhi_bi_cc_only, :nhi_bi_cc_plus, :nhi_bi_reg_med, :nhi_bi_invasive, :nhi_bi_respirator, :nhi_bi_dialysis, :nhi_bi_cpr)
+		def first_scenario_params
+			params.require(:first_scenario).permit(:user_id, :ami_cc_only, :ami_cc_plus, :ami_reg_med, :ami_invasive, :ami_respirator, :ami_dialysis, :ami_cpr,:bi_cc_only, :bi_cc_plus, :bi_reg_med, :bi_invasive, :bi_respirator, :bi_dialysis, :bi_cpr)
 		end
 end
