@@ -13,13 +13,16 @@ Rails.application.routes.draw do
 
   resources :users
   resources :forms
+  resources :first_scenarios
+  resources :second_scenarios
+  resources :third_scenarios
+  resources :fourth_scenarios
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
   root 'users#new'
   resources :user_sessions
-  resources :users
 
   get 'login' => 'user_sessions#new', :as => :login
   post 'logout' => 'user_sessions#destroy', :as => :logout

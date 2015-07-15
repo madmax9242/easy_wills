@@ -9,7 +9,12 @@ class User < ActiveRecord::Base
 
 	has_one :form, dependent: :destroy
 
+
 	def logged_in? 
 		@user
 	end
+
+	# def formExists?
+	# 	@user
+	# end
 end
