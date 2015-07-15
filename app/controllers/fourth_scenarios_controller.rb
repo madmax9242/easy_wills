@@ -16,7 +16,7 @@ class FourthScenariosController < ApplicationController
 
 		respond_to do |format|
 			if @fourth_scenario.save
-				format.html { redirect_to @fourth_scenario, notice: 'fourth_scenario was successfully created.' }
+				format.html { redirect_to :forms, notice: 'fourth_scenario was successfully created.' }
 				format.json { render :show, status: :created, location: @fourth_scenario }
 			else
 				format.html { render :new }

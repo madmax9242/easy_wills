@@ -1,4 +1,9 @@
 class FormsController < ApplicationController
+	def index 
+		compileForm
+		redirect_to @form
+	end
+
 	def new
 		#Makes a new form, but does not save to database
 		@form = Form.new
