@@ -1,4 +1,8 @@
 class FourthScenariosController < ApplicationController
+	def index 
+		@fourth_scenario = Fourth_Scenario.new
+	end
+
 	def new
 		#Makes a new form, but does not save to database
 		@fourth_scenario = Fourth_Scenario.new

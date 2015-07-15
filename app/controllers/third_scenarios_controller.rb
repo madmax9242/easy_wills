@@ -1,18 +1,22 @@
 class ThirdScenariosController < ApplicationController
+	def index
+		@third_scenario = Third_Scenario.new
+	end
+
 	def new
 		#Makes a new third_scenario, but does not save to database
-		@third_scenario = third_scenario.new
+		@third_scenario = Third_Scenario.new
 	end
 
 	def create
 		#Makes and saves new third_scenario to database
-		@third_scenario = third_scenario.new(third_scenario_params)
+		@third_scenario = Third_Scenario.new(third_scenario_params)
 		@third_scenario.user_id = current_user.id
 		@third_scenario.save
 
 		respond_to do |format|
 			if @third_scenario.save
-				format.html { redirect_to @third_scenario, notice: 'third_scenario was successfully created.' }
+				format.html { redirect_to :fourth_scenarios, notice: 'Third scenario was successfully created.' }
 				format.json { render :show, status: :created, location: @third_scenario }
 			else
 				format.html { render :new }

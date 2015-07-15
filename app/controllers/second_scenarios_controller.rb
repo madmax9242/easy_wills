@@ -1,4 +1,8 @@
 class SecondScenariosController < ApplicationController
+	def index
+		@second_scenario = Second_Scenario.new
+	end
+
 	def new
 		#Makes a new second_scenario, but does not save to database
 		@second_scenario = Second_Scenario.new
@@ -12,7 +16,7 @@ class SecondScenariosController < ApplicationController
 
 		respond_to do |format|
 			if @second_scenario.save
-				format.html { redirect_to @second_scenario, notice: 'second_scenario was successfully created.' }
+				format.html { redirect_to :third_scenarios, notice: 'Second scenario was successfully created.' }
 				format.json { render :show, status: :created, location: @second_scenario }
 			else
 				format.html { render :new }
@@ -42,7 +46,7 @@ class SecondScenariosController < ApplicationController
 		#Destroys second_scenario
 		@second_scenario.destroy
 		respond_to do |format|
-		  format.html { redirect_to users_url, notice: 'second_scenario was successfully destroyed.' }
+		  format.html { redirect_to users_url, notice: 'Second scenario was successfully destroyed.' }
 		  format.json { head :no_content }
 		end
 	end

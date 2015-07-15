@@ -1,18 +1,22 @@
 class FirstScenariosController < ApplicationController
+	def index
+		@first_scenario = First_Scenario.new
+	end
+
 	def new
 		#Makes a new first_scenario, but does not save to database
-		@first_scenario = first_scenario.new
+		@first_scenario = First_Scenario.new
 	end
 
 	def create
 		#Makes and saves new first_scenario to database
-		@first_scenario = first_scenario.new(first_scenario_params)
+		@first_scenario = First_Scenario.new(first_scenario_params)
 		@first_scenario.user_id = current_user.id
 		@first_scenario.save
 
 		respond_to do |format|
 			if @first_scenario.save
-				format.html { redirect_to @first_scenario, notice: 'first_scenario was successfully created.' }
+				format.html { redirect_to :second_scenarios, notice: 'First scenario was successfully created.' }
 				format.json { render :show, status: :created, location: @first_scenario }
 			else
 				format.html { render :new }
