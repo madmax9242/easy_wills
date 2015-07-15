@@ -13,6 +13,10 @@ Rails.application.routes.draw do
 
   resources :users
   resources :forms
+  resources :first_scenario
+  resources :second_scenario
+  resources :third_scenario
+  resources :fourth_scenario
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
