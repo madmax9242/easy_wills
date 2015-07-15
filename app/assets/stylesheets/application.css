@@ -13,3 +13,14 @@
  *= require_tree .
  *= require_self
  */
+
+ .main-form-box  {
+ 	max-width: 80%;
+ 	margin: 0 auto;
+ 	background-color: lightblue;
+
+ }
+ .brandImage {
+ 	height: 1.5em;
+ 	width: 1.5em;
+ }
