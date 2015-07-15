@@ -11,10 +11,28 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150714204037) do
+ActiveRecord::Schema.define(version: 20150715193959) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "first_scenarios", force: :cascade do |t|
+    t.integer "user_id"
+    t.string  "ami_cc_only",    default: "0"
+    t.string  "ami_cc_plus",    default: "0"
+    t.string  "ami_reg_med",    default: "0"
+    t.string  "ami_invasive",   default: "0"
+    t.string  "ami_respirator", default: "0"
+    t.string  "ami_dialysis",   default: "0"
+    t.string  "ami_cpr",        default: "0"
+    t.string  "bi_cc_only",     default: "0"
+    t.string  "bi_cc_plus",     default: "0"
+    t.string  "bi_reg_med",     default: "0"
+    t.string  "bi_invasive",    default: "0"
+    t.string  "bi_respirator",  default: "0"
+    t.string  "bi_dialysis",    default: "0"
+    t.string  "bi_cpr",         default: "0"
+  end
 
   create_table "forms", force: :cascade do |t|
     t.integer "user_id"
@@ -76,6 +94,60 @@ ActiveRecord::Schema.define(version: 20150714204037) do
     t.string  "nhi_bi_cpr",          default: "0"
   end
 
+  create_table "fourth_scenarios", force: :cascade do |t|
+    t.integer "user_id"
+    t.string  "ami_cc_only",    default: "0"
+    t.string  "ami_cc_plus",    default: "0"
+    t.string  "ami_reg_med",    default: "0"
+    t.string  "ami_invasive",   default: "0"
+    t.string  "ami_respirator", default: "0"
+    t.string  "ami_dialysis",   default: "0"
+    t.string  "ami_cpr",        default: "0"
+    t.string  "bi_cc_only",     default: "0"
+    t.string  "bi_cc_plus",     default: "0"
+    t.string  "bi_reg_med",     default: "0"
+    t.string  "bi_invasive",    default: "0"
+    t.string  "bi_respirator",  default: "0"
+    t.string  "bi_dialysis",    default: "0"
+    t.string  "bi_cpr",         default: "0"
+  end
+
+  create_table "second_scenarios", force: :cascade do |t|
+    t.integer "user_id"
+    t.string  "ami_cc_only",    default: "0"
+    t.string  "ami_cc_plus",    default: "0"
+    t.string  "ami_reg_med",    default: "0"
+    t.string  "ami_invasive",   default: "0"
+    t.string  "ami_respirator", default: "0"
+    t.string  "ami_dialysis",   default: "0"
+    t.string  "ami_cpr",        default: "0"
+    t.string  "bi_cc_only",     default: "0"
+    t.string  "bi_cc_plus",     default: "0"
+    t.string  "bi_reg_med",     default: "0"
+    t.string  "bi_invasive",    default: "0"
+    t.string  "bi_respirator",  default: "0"
+    t.string  "bi_dialysis",    default: "0"
+    t.string  "bi_cpr",         default: "0"
+  end
+
+  create_table "third_scenarios", force: :cascade do |t|
+    t.integer "user_id"
+    t.string  "ami_cc_only",    default: "0"
+    t.string  "ami_cc_plus",    default: "0"
+    t.string  "ami_reg_med",    default: "0"
+    t.string  "ami_invasive",   default: "0"
+    t.string  "ami_respirator", default: "0"
+    t.string  "ami_dialysis",   default: "0"
+    t.string  "ami_cpr",        default: "0"
+    t.string  "bi_cc_only",     default: "0"
+    t.string  "bi_cc_plus",     default: "0"
+    t.string  "bi_reg_med",     default: "0"
+    t.string  "bi_invasive",    default: "0"
+    t.string  "bi_respirator",  default: "0"
+    t.string  "bi_dialysis",    default: "0"
+    t.string  "bi_cpr",         default: "0"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string   "email",            null: false
     t.string   "crypted_password"
@@ -89,5 +161,9 @@ ActiveRecord::Schema.define(version: 20150714204037) do
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
 
+  add_foreign_key "first_scenarios", "users"
   add_foreign_key "forms", "users"
+  add_foreign_key "fourth_scenarios", "users"
+  add_foreign_key "second_scenarios", "users"
+  add_foreign_key "third_scenarios", "users"
 end
