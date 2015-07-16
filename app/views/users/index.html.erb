@@ -3,33 +3,14 @@
 <h1 class="header-text">Hello, <%= current_user.first_name %>!</h1>
 <h3 class="header-text">Let's get started</h3>
 
-  <p>
-
-    <p><strong>Current Quality of Life</strong></p>
-   <p>First, let’s see how you would describe your current quality of life.</p>
-
-    <p><strong>Why is this important?</strong>  It is not unusual for several years to have passed from the time a person filled out their living will and when it is first needed to help decide how to treat them medically.  Sometimes a person’s quality of life may have changed significantly over that time.  If their quality of life has gotten significantly worse they may now not want to be treated as aggressively as they indicated in their living will.</p>
-
-    <p>While a person should ideally complete a new living will any time their quality of life changes significantly most people forget to do 
-    so. If you have been hospitalized and your surrogate and doctors are using your living will to help determine what care you would want it could be helpful to them if they knew that your quality of life was now much worse than when you completed your living will.</p>
-  </p>
-
-  <form>
-    <input id="r1" type="radio" name="quality-of-life" value="excellent"><strong>Excellent:</strong>  I am able to fully care for myself and have no limitations on what I am able to do.<br><br>
-    <input id="r2" type="radio" name="quality-of-life" value="good"><strong>Good:</strong> I am able to fully care for myself and can do most things I would want to do.<br><br>
-    <input id="r3" type="radio" name="quality-of-life" value="acceptable"><strong>Acceptable:</strong>  I need assistance with activities of daily living (bathing, dressing, using the toilet, etc.).  I am also limited in the things I can do but can still do things that are important to me.<br><br>
-    <input id="r4" type="radio" name="quality-of-life" value="poor"><strong>Poor:</strong>  I need assistance with most activities of daily living and I can do very few things that are important to me.<br><br>
-    <input id="r5" type="radio" name="quality-of-life" value="good"><strong>Unacceptable:</strong>  Most days I can’t do anything that is important to me or gives me joy.<br><br>
-    
-    Click the link below to continue to the Living Will Form.<br><br>
-
-  </form>
-  <button class="form-start"><%= link_to 'Fill out form', :first_scenarios %></button>
-
+  <h3 class="header-text">Click the link below to continue to the Living Will Form.</h3><br><br>
+  <div class="middle">
+    <button class="form-start"><%= link_to 'Fill out form', :first_scenarios %></button>
+  </div>
   
 <% else %>
-  <p>Click the link below to register a new profile and start your Living Will.</p>
-
-  <button><%= link_to 'New User', new_user_path %></button>
-
+  <p><h2 class="header-text">Click the link below to register a new profile and start your Living Will.</h2></p>
+  <div class="middle">
+    <button class="middle"><%= link_to 'New User', new_user_path %></button>
+  </div>
 <% end %>

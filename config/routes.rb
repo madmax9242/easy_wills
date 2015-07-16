@@ -23,7 +23,7 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'users#new'
+  root 'users#index'
   resources :user_sessions
 
   get 'login' => 'user_sessions#new', :as => :login

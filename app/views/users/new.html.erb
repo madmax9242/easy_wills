@@ -4,7 +4,7 @@
 	<h1 class="header-text">Welcome <% @user.first_name %></h1>
 
 	<h3 class="header-text">Do you need to edit your profile?</h3>
-	<button><%= link_to 'Edit Profile', 'users_edit' %></button>
+	<button class="header-text"><%= link_to 'Edit Profile', edit_user_path(current_user.id) %></button>
 	
 
 <% else %>

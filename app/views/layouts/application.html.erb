@@ -73,6 +73,7 @@
             <% if current_user %>
               <li class="active"><%= link_to "Logout", :logout, method: :post %></li>
               <li class="active"><%= link_to "Edit Will", edit_form_path(current_user.id) %></li>
+              <li class="active"><%= link_to 'Edit Profile', edit_user_path(current_user.id) %></li>
             <% else %>
               <li class="active"><%= link_to "Register", new_user_path %></li>
               <li class="active"><%= link_to "Login", :login %></li>
@@ -86,8 +87,8 @@
 
 
   <div>
-    <p id="notice"><%= flash[:notice] %></p>
-    <p id="alert"><%= flash[:alert] %></p>
+    <p class="header-text" id="notice"><%= flash[:notice] %></p>
+    <p class="header-text" id="alert"><%= flash[:alert] %></p>
   </div>
   
   <div class="main-form-box">		
