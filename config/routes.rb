@@ -11,12 +11,14 @@ Rails.application.routes.draw do
   get 'forms/edit' => 'forms#edit'
   patch 'forms' => 'forms#show'
 
+  get 'users/edit' => 'users#edit'
+
   resources :users
   resources :forms
-  resources :first_scenarios
-  resources :second_scenarios
-  resources :third_scenarios
-  resources :fourth_scenarios
+  resources :first_scenarios, :only => [:index]
+  resources :second_scenarios, :only => [:index]
+  resources :third_scenarios, :only => [:index]
+  resources :fourth_scenarios, :only => [:index]
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

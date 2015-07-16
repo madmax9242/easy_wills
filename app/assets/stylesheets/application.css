@@ -24,3 +24,17 @@
  	height: 1.5em;
  	width: 1.5em;
  }
+
+ .new-form  {
+ 	max-width: 20%;
+ 	margin-left: 40%;
+ }
+
+ .header-text {
+ 	text-align: center;
+
+ }
+
+ .hidden  {
+ 	display:none;
+ }

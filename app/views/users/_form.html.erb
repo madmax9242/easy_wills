@@ -1,36 +1,49 @@
-<%= form_for(@user) do |f| %>
-  <% if @user.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+<div class="new-form">
+  <%= form_for(@user) do |f| %>
+    <% if @user.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
 
-      <ul>
-      <% @user.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+        <ul>
+        <% @user.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+    <div class="field">
+      <%= f.label :first_name %><br>
+      <%= f.text_field :first_name %>
+    </div>
+    <div class="field">
+      <%= f.label :last_name %><br>
+      <%= f.text_field :last_name %>
+    </div>
+    <div class="field">
+      <%= f.label :email %><br>
+      <%= f.text_field :email %>
+    </div>
+    <div class="field">
+       <%= f.label :password %><br />
+       <%= f.password_field :password %>
+    </div>
+    <div class="field">
+       <%= f.label :password_confirmation %><br />
+       <%= f.password_field :password_confirmation %>
+    </div>
+    <div class="field">
+      <strong>Quality of Life</strong><br><br>
+      <%= f.radio_button :quality_of_life, 'excellent' %><strong>Excellent:</strong>  I am able to fully care for myself and have no limitations on what I am able to do.<br><br>
+      <%= f.radio_button :quality_of_life, 'good' %>Good:</strong> I am able to fully care for myself and can do most things I would want to do.<br><br>
+      <%= f.radio_button :quality_of_life, 'acceptable', :checked => true%><strong>Acceptable:</strong>  I need assistance with activities of daily living (bathing, dressing, using the toilet, etc.).  I am also limited in the things I can do but can still do things that are important to me.<br><br>
+      <%= f.radio_button :quality_of_life, 'poor' %><strong>Poor:</strong>  I need assistance with most activities of daily living and I can do very few things that are important to me.<br><br>
+      <%= f.radio_button :quality_of_life, 'unacceptable' %><strong>Unacceptable:</strong>  Most days I can’t do anything that is important to me or gives me joy.
+    
+
+    </div>
+
+    <div class="actions">
+      <%= f.submit %>
     </div>
   <% end %>
-  <div class="field">
-    <%= f.label :first_name %><br>
-    <%= f.text_field :first_name %>
-  </div>
-  <div class="field">
-    <%= f.label :last_name %><br>
-    <%= f.text_field :last_name %>
-  </div>
-  <div class="field">
-    <%= f.label :email %><br>
-    <%= f.text_field :email %>
-  </div>
-  <div class="field">
-     <%= f.label :password %><br />
-     <%= f.password_field :password %>
-  </div>
-  <div class="field">
-     <%= f.label :password_confirmation %><br />
-     <%= f.password_field :password_confirmation %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
+</div>

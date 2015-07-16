@@ -1,7 +1,7 @@
 
 <% if logged_in? %>
-<h1>Hello, <%= current_user.first_name %>!</h1>
-<h3>Let's get started</h3>
+<h1 class="header-text">Hello, <%= current_user.first_name %>!</h1>
+<h3 class="header-text">Let's get started</h3>
 
   <p>
 
@@ -15,23 +15,21 @@
   </p>
 
   <form>
-    <input type="radio" name="quality-of-life" value="excellent"><strong>Excellent:</strong>  I am able to fully care for myself and have no limitations on what I am able to do.<br><br>
-    <input type="radio" name="quality-of-life" value="good"><strong>Good:</strong> I am able to fully care for myself and can do most things I would want to do.<br><br>
-    <input type="radio" name="quality-of-life" value="acceptable"><strong>Acceptable:</strong>  I need assistance with activities of daily living (bathing, dressing, using the toilet, etc.).  I am also limited in the things I can do but can still do things that are important to me.<br><br>
-    <input type="radio" name="quality-of-life" value="poor"><strong>Poor:</strong>  I need assistance with most activities of daily living and I can do very few things that are important to me.<br><br>
-    <input type="radio" name="quality-of-life" value="good"><strong>Unacceptable:</strong>  Most days I can’t do anything that is important to me or gives me joy.<br><br>
-
+    <input id="r1" type="radio" name="quality-of-life" value="excellent"><strong>Excellent:</strong>  I am able to fully care for myself and have no limitations on what I am able to do.<br><br>
+    <input id="r2" type="radio" name="quality-of-life" value="good"><strong>Good:</strong> I am able to fully care for myself and can do most things I would want to do.<br><br>
+    <input id="r3" type="radio" name="quality-of-life" value="acceptable"><strong>Acceptable:</strong>  I need assistance with activities of daily living (bathing, dressing, using the toilet, etc.).  I am also limited in the things I can do but can still do things that are important to me.<br><br>
+    <input id="r4" type="radio" name="quality-of-life" value="poor"><strong>Poor:</strong>  I need assistance with most activities of daily living and I can do very few things that are important to me.<br><br>
+    <input id="r5" type="radio" name="quality-of-life" value="good"><strong>Unacceptable:</strong>  Most days I can’t do anything that is important to me or gives me joy.<br><br>
+    
     Click the link below to continue to the Living Will Form.<br><br>
 
-    <button class="form-start"><%= link_to 'Fill out form', :first_scenarios %></button>
-
-
   </form>
+  <button class="form-start"><%= link_to 'Fill out form', :first_scenarios %></button>
 
   
 <% else %>
   <p>Click the link below to register a new profile and start your Living Will.</p>
 
-  <%= link_to 'New User', new_user_path %>
+  <button><%= link_to 'New User', new_user_path %></button>
 
 <% end %>
