@@ -13,16 +13,17 @@ class FourthScenariosController < ApplicationController
 		@fourth_scenario = Fourth_Scenario.new(fourth_scenario_params)
 		@fourth_scenario.user_id = current_user.id
 		@fourth_scenario.save
+		redirect_to :forms
 
-		respond_to do |format|
-			if @fourth_scenario.save
-				format.html { redirect_to :forms, notice: 'fourth_scenario was successfully created.' }
-				format.json { render :show, status: :created, location: @fourth_scenario }
-			else
-				format.html { render :new }
-				format.json { render json: @fourth_scenario.errors, status: :unprocessable_entity }
-			end
-		end
+		# respond_to do |format|
+		# 	if @fourth_scenario.save
+		# 		format.html { redirect_to :forms, notice: 'Fourth scenario was successfully created.' }
+		# 		format.json { render :show, status: :created, location: @fourth_scenario }
+		# 	else
+		# 		format.html { render :new }
+		# 		format.json { render json: @fourth_scenario.errors, status: :unprocessable_entity }
+		# 	end
+		# end
 	end
 
 	def show

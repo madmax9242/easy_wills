@@ -5,13 +5,13 @@ class Form < ActiveRecord::Base
 	has_one :third_scenario
 	has_one :fourth_scenario
 
-	def formExists?
-		@form
-	end
+    def formExists?
+	  @form
+    end
 
-	def compileForm
-		@form = Form.new
-		@form.gh_ami_cc_only = form.first_scenario.ami_cc_only 
+    def compileForm
+	@form = Form.new
+	@form.gh_ami_cc_only = form.first_scenario.ami_cc_only 
         @form.gh_ami_cc_plus = form.first_scenario.ami_cc_plus 
         @form.gh_ami_reg_med = form.first_scenario.ami_reg_med 
         @form.gh_ami_invasive = form.first_scenario.ami_invasive 
@@ -67,7 +67,7 @@ class Form < ActiveRecord::Base
         @form.nhi_bi_respirator = form.fourth_scenario.bi_respirator
         @form.nhi_bi_dialysis = form.fourth_scenario.bi_dialysis
         @form.nhi_bi_cpr = form.fourth_scenario.bi_cpr
-
+        # @form.user_id = current_user.id
         @form.save
-	end
+    end
 end
