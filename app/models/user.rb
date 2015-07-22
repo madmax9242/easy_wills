@@ -9,6 +9,11 @@ class User < ActiveRecord::Base
 
 	has_one :form, dependent: :destroy
 
+	has_one :first_scenario
+	has_one :second_scenario
+	has_one :third_scenario
+	has_one :fourth_scenario
+
 
 	def logged_in? 
 		@user

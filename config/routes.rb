@@ -25,7 +25,7 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'users#index'
   resources :user_sessions
-
+  get 'users/form' => 'users#form'
   get 'login' => 'user_sessions#new', :as => :login
   post 'logout' => 'user_sessions#destroy', :as => :logout
 
