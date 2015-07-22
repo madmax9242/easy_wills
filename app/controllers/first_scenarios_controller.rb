@@ -16,6 +16,7 @@ class FirstScenariosController < ApplicationController
 
 		respond_to do |format|
 			if @first_scenario.save
+				logger.info()
 				format.html { redirect_to :second_scenarios, notice: 'First scenario was successfully created.' }
 				format.json { render :show, status: :created, location: @first_scenario }
 			else

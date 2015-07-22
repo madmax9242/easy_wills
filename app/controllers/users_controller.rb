@@ -4,7 +4,9 @@ class UsersController < ApplicationController
 
   # GET /users
   def index
+    print 'hey'
     @users = User.all
+    @users.inspect
   end
 
   # GET /users/1
@@ -61,7 +63,7 @@ class UsersController < ApplicationController
   end
 
   def form
-    
+
   end
 
   private
