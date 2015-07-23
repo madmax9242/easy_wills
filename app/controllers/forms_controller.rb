@@ -1,6 +1,6 @@
 class FormsController < ApplicationController
 	def index 
-		compileForm
+		Form.compile_form
 		redirect_to @form
 	end
 
@@ -27,6 +27,7 @@ class FormsController < ApplicationController
 	end
 
 	def show
+		Form.compile_form
 		@form = Form.find(params[:id])
 	end
 

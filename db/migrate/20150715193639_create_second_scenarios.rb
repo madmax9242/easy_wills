@@ -2,6 +2,7 @@ class CreateSecondScenarios < ActiveRecord::Migration
   def change
     create_table :second_scenarios do |t|
     	t.integer :user_id
+        t.integer :form_id
     	t.string :ami_cc_only, default: "0"
         t.string :ami_cc_plus, default: "0"
         t.string :ami_reg_med, default: "0"
@@ -20,5 +21,6 @@ class CreateSecondScenarios < ActiveRecord::Migration
     end
 
     add_foreign_key :second_scenarios, :users
+    add_foreign_key :second_scenarios, :forms
   end
 end

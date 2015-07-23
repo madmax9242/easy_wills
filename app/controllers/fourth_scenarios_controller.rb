@@ -13,9 +13,9 @@ class FourthScenariosController < ApplicationController
 		@fourth_scenario = Fourth_Scenario.new(fourth_scenario_params)
 		@fourth_scenario.user_id = current_user.id
 		@fourth_scenario.save
-		puts @fourth_scenario
-		puts 'peanuts'
-		redirect_to :users
+		# puts @fourth_scenario
+		# puts 'peanuts'
+		redirect_to :forms
 
 		# respond_to do |format|
 		# 	if @fourth_scenario.save
