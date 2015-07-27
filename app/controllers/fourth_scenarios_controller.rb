@@ -15,7 +15,7 @@ class FourthScenariosController < ApplicationController
 		@fourth_scenario.save
 		# puts @fourth_scenario
 		# puts 'peanuts'
-		redirect_to :forms
+		redirect_to :users
 
 		# respond_to do |format|
 		# 	if @fourth_scenario.save

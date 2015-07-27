@@ -1,96 +1,107 @@
 <!-- Form for the Living Will  -->
 <%= form_for(@form) do |f| %>
 
-  <div class="field">
-    <p><strong>1. My quality of health is similar to what it is now. i.e. I have no end-stage medical conditions and my mental faculties are intact. I am able to care for myself.</strong></p>
-    <p>If I develop an acute medical illness that may be treated, and my doctors think I have a reasonable chance of surviving the illness and leaving the hospital, I wish the following: (Check any that apply:</p>
-    <%= f.check_box :gh_ami_cc_only %>Comfort care only <br />
-    <%= f.check_box :gh_ami_cc_plus,checked_value: "1",unchecked_value: "0" %>Comfort care, to include intravenous fluids and tube feedings<br />
-    <%= f.check_box :gh_ami_reg_med %>Regular medical care <br />
-    <%= f.check_box :gh_ami_invasive,checked_value: "1",unchecked_value: "0" %>Invasive procedures like surgery or heart catheterizations<br />
-    <%= f.check_box :gh_ami_respirator,checked_value: "1",unchecked_value: "0" %>Temporary support from a respirator<br />
-    <%= f.check_box :gh_ami_dialysis,checked_value: "1",unchecked_value: "0" %>Temporary support<br />
-    <%= f.check_box :gh_ami_cpr,checked_value: "1",unchecked_value: "0" %>CPR if my heart stops<br />
-  </div>
-  <div class="field">
-    <p>If I suffer some form of brain injury (stroke, bleeding, cardiac arrest, etc.) that makes it unlikely I’ll ever regain the ability to make decisions for myself, I wish the following: (Check any that apply):</p>
-    <%= f.check_box :gh_bi_cc_only %>Comfort care only <br />
-    <%= f.check_box :gh_bi_cc_plus %>Comfort care, to include intravenous fluids and tube feedings<br />
-    <%= f.check_box :gh_bi_reg_med %>Regular medical care <br />
-    <%= f.check_box :gh_bi_invasive %>Invasive procedures like surgery or heart catheterizations<br />
-    <%= f.check_box :gh_bi_respirator %>Temporary support from a respirator<br />
-    <%= f.check_box :gh_bi_dialysis %>Temporary support<br />
-    <%= f.check_box :gh_bi_cpr %>CPR if my heart stops<br />
-  </div>
-
-  <div class="field">
-    <p><strong>2. My general health has deteriorated to the point I need assistance in caring for myself but I am still at home and my mental faculties are intact.</strong></p>
-    <p>If I develop an acute medical illness that may be treated, and my doctors think I have a reasonable chance of surviving the illness and leaving the hospital, I wish the following: (Check any that apply:</p>
-    <%= f.check_box :dh_ami_cc_only %>Comfort care only <br />
-    <%= f.check_box :dh_ami_cc_plus %>Comfort care, to include intravenous fluids and tube feedings<br />
-    <%= f.check_box :dh_ami_reg_med %>Regular medical care <br />
-    <%= f.check_box :dh_ami_invasive %>Invasive procedures like surgery or heart catheterizations<br />
-    <%= f.check_box :dh_ami_respirator %>Temporary support from a respirator<br />
-    <%= f.check_box :dh_ami_dialysis %>Temporary support<br />
-    <%= f.check_box :dh_ami_cpr %>CPR if my heart stops<br />
-  </div>
-  <div class="field">
-    <p>If I suffer some form of brain injury (stroke, bleeding, cardiac arrest, etc.) that makes it unlikely I’ll ever regain the ability to make decisions for myself, I wish the following: (Check any that apply):</p>
-    <%= f.check_box :dh_bi_cc_only %>Comfort care only <br />
-    <%= f.check_box :dh_bi_cc_plus %>Comfort care, to include intravenous fluids and tube feedings<br />
-    <%= f.check_box :dh_bi_reg_med %>Regular medical care <br />
-    <%= f.check_box :dh_bi_invasive %>Invasive procedures like surgery or heart catheterizations<br />
-    <%= f.check_box :dh_bi_respirator %>Temporary support from a respirator<br />
-    <%= f.check_box :dh_bi_dialysis %>Temporary support<br />
-    <%= f.check_box :dh_bi_cpr %>CPR if my heart stops<br />
+  <div id="first">
+    <div class="field">
+      <p><strong>1. My quality of health is similar to what it is now. i.e. I have no end-stage medical conditions and my mental faculties are intact. I am able to care for myself.</strong></p>
+      <p>If I develop an acute medical illness that may be treated, and my doctors think I have a reasonable chance of surviving the illness and leaving the hospital, I wish the following: (Check any that apply:</p>
+      <%= f.check_box :gh_ami_cc_only %>Comfort care only <br />
+      <%= f.check_box :gh_ami_cc_plus,checked_value: "1",unchecked_value: "0" %>Comfort care, to include intravenous fluids and tube feedings<br />
+      <%= f.check_box :gh_ami_reg_med %>Regular medical care <br />
+      <%= f.check_box :gh_ami_invasive,checked_value: "1",unchecked_value: "0" %>Invasive procedures like surgery or heart catheterizations<br />
+      <%= f.check_box :gh_ami_respirator,checked_value: "1",unchecked_value: "0" %>Temporary support from a respirator<br />
+      <%= f.check_box :gh_ami_dialysis,checked_value: "1",unchecked_value: "0" %>Temporary support<br />
+      <%= f.check_box :gh_ami_cpr,checked_value: "1",unchecked_value: "0" %>CPR if my heart stops<br />
+    </div>
+    <div class="field">
+      <p>If I suffer some form of brain injury (stroke, bleeding, cardiac arrest, etc.) that makes it unlikely I’ll ever regain the ability to make decisions for myself, I wish the following: (Check any that apply):</p>
+      <%= f.check_box :gh_bi_cc_only %>Comfort care only <br />
+      <%= f.check_box :gh_bi_cc_plus %>Comfort care, to include intravenous fluids and tube feedings<br />
+      <%= f.check_box :gh_bi_reg_med %>Regular medical care <br />
+      <%= f.check_box :gh_bi_invasive %>Invasive procedures like surgery or heart catheterizations<br />
+      <%= f.check_box :gh_bi_respirator %>Temporary support from a respirator<br />
+      <%= f.check_box :gh_bi_dialysis %>Temporary support<br />
+      <%= f.check_box :gh_bi_cpr %>CPR if my heart stops<br />
+    </div>
+    <h2><span id="to_2">Next</span></h2>
   </div>
 
-  <div class="field">
-    <p><strong>3. I have been diagnosed with an end-stage medical condition but have been told I could live for a year or more. I still live at home and my mental faculties are intact.</strong></p>
-    <p>If I develop an acute medical illness that may be treated, and my doctors think I have a reasonable chance of surviving the illness and leaving the hospital, I wish the following: (Check any that apply:</p>
-    <%= f.check_box :esmc_ami_cc_only %>Comfort care only <br />
-    <%= f.check_box :esmc_ami_cc_plus %>Comfort care, to include intravenous fluids and tube feedings<br />
-    <%= f.check_box :esmc_ami_reg_med %>Regular medical care <br />
-    <%= f.check_box :esmc_ami_invasive %>Invasive procedures like surgery or heart catheterizations<br />
-    <%= f.check_box :esmc_ami_respirator %>Temporary support from a respirator<br />
-    <%= f.check_box :esmc_ami_dialysis %>Temporary support<br />
-    <%= f.check_box :esmc_ami_cpr %>CPR if my heart stops<br />
-  </div>
-  <div class="field">
-    <p>If I suffer some form of brain injury (stroke, bleeding, cardiac arrest, etc.) that makes it unlikely I’ll ever regain the ability to make decisions for myself, I wish the following: (Check any that apply):</p>
-    <%= f.check_box :esmc_bi_cc_only %>Comfort care only<br />
-    <%= f.check_box :esmc_bi_cc_plus %>Comfort care, to include intravenous fluids and tube feedings<br />
-    <%= f.check_box :esmc_bi_reg_med %>Regular medical care<br /> 
-    <%= f.check_box :esmc_bi_invasive %>Invasive procedures like surgery or heart catheterizations<br />
-    <%= f.check_box :esmc_bi_respirator %>Temporary support from a respirator<br />
-    <%= f.check_box :esmc_bi_dialysis %>Temporary support<br />
-    <%= f.check_box :esmc_bi_cpr %>CPR if my heart stops<br />
+  <div class="hidden" id="second">
+    <div class="field">
+      <p><strong>2. My general health has deteriorated to the point I need assistance in caring for myself but I am still at home and my mental faculties are intact.</strong></p>
+      <p>If I develop an acute medical illness that may be treated, and my doctors think I have a reasonable chance of surviving the illness and leaving the hospital, I wish the following: (Check any that apply:</p>
+      <%= f.check_box :dh_ami_cc_only %>Comfort care only <br />
+      <%= f.check_box :dh_ami_cc_plus %>Comfort care, to include intravenous fluids and tube feedings<br />
+      <%= f.check_box :dh_ami_reg_med %>Regular medical care <br />
+      <%= f.check_box :dh_ami_invasive %>Invasive procedures like surgery or heart catheterizations<br />
+      <%= f.check_box :dh_ami_respirator %>Temporary support from a respirator<br />
+      <%= f.check_box :dh_ami_dialysis %>Temporary support<br />
+      <%= f.check_box :dh_ami_cpr %>CPR if my heart stops<br />
+    </div>
+    <div class="field">
+      <p>If I suffer some form of brain injury (stroke, bleeding, cardiac arrest, etc.) that makes it unlikely I’ll ever regain the ability to make decisions for myself, I wish the following: (Check any that apply):</p>
+      <%= f.check_box :dh_bi_cc_only %>Comfort care only <br />
+      <%= f.check_box :dh_bi_cc_plus %>Comfort care, to include intravenous fluids and tube feedings<br />
+      <%= f.check_box :dh_bi_reg_med %>Regular medical care <br />
+      <%= f.check_box :dh_bi_invasive %>Invasive procedures like surgery or heart catheterizations<br />
+      <%= f.check_box :dh_bi_respirator %>Temporary support from a respirator<br />
+      <%= f.check_box :dh_bi_dialysis %>Temporary support<br />
+      <%= f.check_box :dh_bi_cpr %>CPR if my heart stops<br />
+    </div>
+    <h2><span id="to_3">Next</span></h2>
   </div>
 
-  <div class="field">
-    <p><strong>4. I am dying from an end-stage medical condition with no hope of improvement.</strong></p>
-    <p>If I develop an acute medical illness that may be treated, and my doctors think I have a reasonable chance of surviving the illness and leaving the hospital, I wish the following: (Check any that apply:</p>
-    <%= f.check_box :nhi_ami_cc_only %>Comfort care only<br /> 
-    <%= f.check_box :nhi_ami_cc_plus %>Comfort care, to include intravenous fluids and tube feedings<br />
-    <%= f.check_box :nhi_ami_reg_med %>Regular medical care<br /> 
-    <%= f.check_box :nhi_ami_invasive %>Invasive procedures like surgery or heart catheterizations<br />
-    <%= f.check_box :nhi_ami_respirator %>Temporary support from a respirator<br />
-    <%= f.check_box :nhi_ami_dialysis %>Temporary support<br />
-    <%= f.check_box :nhi_ami_cpr %>CPR if my heart stops<br />
+  <div class="hidden" id="third">
+    <div class="field">
+      <p><strong>3. I have been diagnosed with an end-stage medical condition but have been told I could live for a year or more. I still live at home and my mental faculties are intact.</strong></p>
+      <p>If I develop an acute medical illness that may be treated, and my doctors think I have a reasonable chance of surviving the illness and leaving the hospital, I wish the following: (Check any that apply:</p>
+      <%= f.check_box :esmc_ami_cc_only %>Comfort care only <br />
+      <%= f.check_box :esmc_ami_cc_plus %>Comfort care, to include intravenous fluids and tube feedings<br />
+      <%= f.check_box :esmc_ami_reg_med %>Regular medical care <br />
+      <%= f.check_box :esmc_ami_invasive %>Invasive procedures like surgery or heart catheterizations<br />
+      <%= f.check_box :esmc_ami_respirator %>Temporary support from a respirator<br />
+      <%= f.check_box :esmc_ami_dialysis %>Temporary support<br />
+      <%= f.check_box :esmc_ami_cpr %>CPR if my heart stops<br />
+    </div>
+    <div class="field">
+      <p>If I suffer some form of brain injury (stroke, bleeding, cardiac arrest, etc.) that makes it unlikely I’ll ever regain the ability to make decisions for myself, I wish the following: (Check any that apply):</p>
+      <%= f.check_box :esmc_bi_cc_only %>Comfort care only<br />
+      <%= f.check_box :esmc_bi_cc_plus %>Comfort care, to include intravenous fluids and tube feedings<br />
+      <%= f.check_box :esmc_bi_reg_med %>Regular medical care<br /> 
+      <%= f.check_box :esmc_bi_invasive %>Invasive procedures like surgery or heart catheterizations<br />
+      <%= f.check_box :esmc_bi_respirator %>Temporary support from a respirator<br />
+      <%= f.check_box :esmc_bi_dialysis %>Temporary support<br />
+      <%= f.check_box :esmc_bi_cpr %>CPR if my heart stops<br />
+    </div>
+    <h2><span id="to_4">Next</span></h2>
   </div>
-  <div class="field">
-    <p>If I suffer some form of brain injury (stroke, bleeding, cardiac arrest, etc.) that makes it unlikely I’ll ever regain the ability to make decisions for myself, I wish the following: (Check any that apply):</p>
-    <%= f.check_box :nhi_bi_cc_only %>Comfort care only <br />
-    <%= f.check_box :nhi_bi_cc_plus %>Comfort care, to include intravenous fluids and tube feedings<br />
-    <%= f.check_box :nhi_bi_reg_med %>Regular medical care <br />
-    <%= f.check_box :nhi_bi_invasive %>Invasive procedures like surgery or heart catheterizations<br />
-    <%= f.check_box :nhi_bi_respirator %>Temporary support from a respirator<br />
-    <%= f.check_box :nhi_bi_dialysis %>Temporary support<br />
-    <%= f.check_box :nhi_bi_cpr %>CPR if my heart stops<br />
-  </div>
-  <div class="middle">
-    <div class="actions">
-      <%= f.submit %>
+
+  <div class="hidden" id="fourth">
+    <div class="field">
+      <p><strong>4. I am dying from an end-stage medical condition with no hope of improvement.</strong></p>
+      <p>If I develop an acute medical illness that may be treated, and my doctors think I have a reasonable chance of surviving the illness and leaving the hospital, I wish the following: (Check any that apply:</p>
+      <%= f.check_box :nhi_ami_cc_only %>Comfort care only<br /> 
+      <%= f.check_box :nhi_ami_cc_plus %>Comfort care, to include intravenous fluids and tube feedings<br />
+      <%= f.check_box :nhi_ami_reg_med %>Regular medical care<br /> 
+      <%= f.check_box :nhi_ami_invasive %>Invasive procedures like surgery or heart catheterizations<br />
+      <%= f.check_box :nhi_ami_respirator %>Temporary support from a respirator<br />
+      <%= f.check_box :nhi_ami_dialysis %>Temporary support<br />
+      <%= f.check_box :nhi_ami_cpr %>CPR if my heart stops<br />
+    </div>
+    <div class="field">
+      <p>If I suffer some form of brain injury (stroke, bleeding, cardiac arrest, etc.) that makes it unlikely I’ll ever regain the ability to make decisions for myself, I wish the following: (Check any that apply):</p>
+      <%= f.check_box :nhi_bi_cc_only %>Comfort care only <br />
+      <%= f.check_box :nhi_bi_cc_plus %>Comfort care, to include intravenous fluids and tube feedings<br />
+      <%= f.check_box :nhi_bi_reg_med %>Regular medical care <br />
+      <%= f.check_box :nhi_bi_invasive %>Invasive procedures like surgery or heart catheterizations<br />
+      <%= f.check_box :nhi_bi_respirator %>Temporary support from a respirator<br />
+      <%= f.check_box :nhi_bi_dialysis %>Temporary support<br />
+      <%= f.check_box :nhi_bi_cpr %>CPR if my heart stops<br />
+    </div>
+    <div class="middle">
+      <div class="actions">
+        <%= f.submit %>
+      </div>
     </div>
   </div>
 <% end %>

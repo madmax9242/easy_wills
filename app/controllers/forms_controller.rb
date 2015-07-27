@@ -1,6 +1,6 @@
 class FormsController < ApplicationController
 	def index 
-		Form.compile_form
+		@form = Form.compile_form
 		redirect_to @form
 	end
 
@@ -27,7 +27,6 @@ class FormsController < ApplicationController
 	end
 
 	def show
-		Form.compile_form
 		@form = Form.find(params[:id])
 	end
 
@@ -52,6 +51,7 @@ class FormsController < ApplicationController
 		  format.json { head :no_content }
 		end
 	end
+
 
 	private
 		#Defines which parameters can be passed into the database
