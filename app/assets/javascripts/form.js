@@ -1,6 +1,3 @@
-// $('#r1, #r2, #r3, #r4, #r5').change(function() {
-// 	$('#hidden').val(this.val());
-// })
 
 $(function() {
 	form_change();
@@ -9,7 +6,9 @@ $(function() {
 });
 
 function form_change() {
+
 	$('#to_2').on('click', function(event) {
+		alert('Working');
 		event.preventDefault;
 		$('#first').addClass("hidden");
 		$('#second').removeClass('hidden');
