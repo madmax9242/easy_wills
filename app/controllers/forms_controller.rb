@@ -1,6 +1,6 @@
 class FormsController < ApplicationController
 	def index 
-		compileForm
+		@form = Form.compile_form
 		redirect_to @form
 	end
 
@@ -51,6 +51,7 @@ class FormsController < ApplicationController
 		  format.json { head :no_content }
 		end
 	end
+
 
 	private
 		#Defines which parameters can be passed into the database

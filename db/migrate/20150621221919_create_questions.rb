@@ -59,15 +59,6 @@ class CreateQuestions < ActiveRecord::Migration
         t.string :nhi_bi_dialysis, default: "0"
         t.string :nhi_bi_cpr, default: "0"
 
-    	# t.text :gh_ami, array: true, default: []
-    	# t.text :gh_bi, array: true, default: []
-    	# t.text :dh_ami, array: true, default: []
-    	# t.text :dh_bi, array: true, default: []
-    	# t.text :esmc_ami, array: true, default: []
-    	# t.text :esmc_bi, array: true, default: []
-    	# t.text :nhi_ami, array: true, default: []
-    	# t.text :nhi_bi, array: true, default: []
-
     end
     #add_index :forms, :user_id
     add_foreign_key :forms, :users

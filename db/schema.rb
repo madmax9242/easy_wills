@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(version: 20150715193959) do
 
   create_table "first_scenarios", force: :cascade do |t|
     t.integer "user_id"
+    t.integer "form_id"
     t.string  "ami_cc_only",    default: "0"
     t.string  "ami_cc_plus",    default: "0"
     t.string  "ami_reg_med",    default: "0"
@@ -96,6 +97,7 @@ ActiveRecord::Schema.define(version: 20150715193959) do
 
   create_table "fourth_scenarios", force: :cascade do |t|
     t.integer "user_id"
+    t.integer "form_id"
     t.string  "ami_cc_only",    default: "0"
     t.string  "ami_cc_plus",    default: "0"
     t.string  "ami_reg_med",    default: "0"
@@ -114,6 +116,7 @@ ActiveRecord::Schema.define(version: 20150715193959) do
 
   create_table "second_scenarios", force: :cascade do |t|
     t.integer "user_id"
+    t.integer "form_id"
     t.string  "ami_cc_only",    default: "0"
     t.string  "ami_cc_plus",    default: "0"
     t.string  "ami_reg_med",    default: "0"
@@ -132,6 +135,7 @@ ActiveRecord::Schema.define(version: 20150715193959) do
 
   create_table "third_scenarios", force: :cascade do |t|
     t.integer "user_id"
+    t.integer "form_id"
     t.string  "ami_cc_only",    default: "0"
     t.string  "ami_cc_plus",    default: "0"
     t.string  "ami_reg_med",    default: "0"
@@ -149,21 +153,25 @@ ActiveRecord::Schema.define(version: 20150715193959) do
   end
 
   create_table "users", force: :cascade do |t|
+    t.string   "first_name"
+    t.string   "last_name"
     t.string   "email",            null: false
     t.string   "crypted_password"
     t.string   "salt"
+    t.string   "quality_of_life"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "first_name"
-    t.string   "last_name"
-    t.string   "quality_of_life"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
 
+  add_foreign_key "first_scenarios", "forms"
   add_foreign_key "first_scenarios", "users"
   add_foreign_key "forms", "users"
+  add_foreign_key "fourth_scenarios", "forms"
   add_foreign_key "fourth_scenarios", "users"
+  add_foreign_key "second_scenarios", "forms"
   add_foreign_key "second_scenarios", "users"
+  add_foreign_key "third_scenarios", "forms"
   add_foreign_key "third_scenarios", "users"
 end
