@@ -12,7 +12,7 @@ function form_change() {
 	$('#to_2').on('click', function(event) {
 		event.preventDefault;
 		$('#first').addClass("hidden");
-		$('#second').toggleClass('hidden');
+		$('#second').removeClass('hidden');
 		$('.progress-bar').text("25%");
 		$('.progress-bar').attr("style", "width:25%");
 	});

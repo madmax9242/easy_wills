@@ -2,12 +2,9 @@
 
 	<h3 class="header-text">Click the link below to continue to the Living Will Form.<h3><br>
 	<div class="middle">
-		<button class="form-start"><%= link_to 'Fill out form', :first_scenarios %></button>
+		<button class="form-start"><%= link_to 'Fill out form', new_form_path %></button>
 	</div>
 
-	<%= current_user.first_scenario.ami_cc_only %>
-
-	<%= current_user.first_scenario.ami_cc_plus %>
 
 
 
