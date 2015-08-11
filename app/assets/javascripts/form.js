@@ -1,15 +1,14 @@
-// $('#r1, #r2, #r3, #r4, #r5').change(function() {
-// 	$('#hidden').val(this.val());
-// })
 
 $(function() {
 	form_change();
+	intro_events();
 
 
 });
 
 function form_change() {
 	$('#to_2').on('click', function(event) {
+		alert('Working');
 		event.preventDefault;
 		$('#first').addClass("hidden");
 		$('#second').toggleClass('hidden');
@@ -31,5 +30,12 @@ function form_change() {
 		$('#fourth').removeClass('hidden');
 		$('.progress-bar').text("75%");
 		$('.progress-bar').attr("style", "width:75%");
+	});
+}
+
+function intro_events() {
+	$('#intro-next').on('click', function(event) {
+		$('#intro-text').addClass("hidden");
+		$('#start-form').removeClass("hidden");
 	});
 }
