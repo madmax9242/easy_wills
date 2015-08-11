@@ -1,1 +1,0 @@
-json.extract! @first_scenario, :id, :
