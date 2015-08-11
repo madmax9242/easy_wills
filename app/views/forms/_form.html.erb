@@ -27,13 +27,11 @@
       <%= f.check_box :gh_bi_dialysis %>Temporary support<br />
       <%= f.check_box :gh_bi_cpr %>CPR if my heart stops<br />
     </div>
-
-    <h2><span class="next-button" id="to_2">Next</span></h2>
-
-    <h2><span class="to_2">Next</span></h2>
-
+    <div class="container-fluid">
+            <span class="back-button"> Back </span>
+            <span id="to_2" class="next-button"> Next </span>
+    </div>
   </div>
-
   <div class="hidden" id="second">
     <div class="field">
 
@@ -61,9 +59,10 @@
       <%= f.check_box :dh_bi_cpr %>CPR if my heart stops<br />
     </div>
 
-    <h2><span class="next-button" id="to_3">Next</span></h2>
-
-    <h2><span class="to_3">Next</span></h2>
+    <div class="container-fluid">
+            <span class="back-button"> Back </span>
+            <span id="to_3" class="next-button"> Next </span>
+    </div>
 
   </div>
 
@@ -94,9 +93,10 @@
       <%= f.check_box :esmc_bi_cpr %>CPR if my heart stops<br />
     </div>
 
-    <h2><span class="next-button" id="to_4">Next</span></h2>
-
-    <h2><span class="to_4">Next</span></h2>
+    <div class="container-fluid">
+      <span class="back-button"> Back </span>
+      <span id="to_4" class="next-button"> Next </span>
+    </div>
 
   </div>
 
@@ -126,10 +126,12 @@
       <%= f.check_box :nhi_bi_dialysis %>Temporary support<br />
       <%= f.check_box :nhi_bi_cpr %>CPR if my heart stops<br />
     </div>
-    <div class="middle">
-      <div class="actions">
-        <%= f.submit %>
-      </div>
+    <div class="fluid-container">
+      <span class="back-button"> Back </span>
+      <button class="submit-button" id="to_4">Finish</button>
+<!--       <div class="actions">
+        <%#= f.submit %>
+      </div> -->
     </div>
   </div>
 <% end %>

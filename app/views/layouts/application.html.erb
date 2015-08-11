@@ -63,7 +63,6 @@
             <% if current_user %>
               <li class="active"><%= link_to "Logout", :logout, method: :post %></li>
               <li class="active"><%= link_to "Edit Will", edit_form_path(current_user.id) %></li>
-              <li class="active"><%= link_to 'Quality of Life', edit_user_path(current_user.id) %></li>
             <% else %>
               <li class="active"><%= link_to "Register", new_user_path %></li>
               <li class="active"><%= link_to "Login", :login %></li>
