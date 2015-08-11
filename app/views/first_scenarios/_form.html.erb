@@ -1,0 +1,28 @@
+<%= form_for(@first_scenario) do |f| %>
+
+  <div class="field">
+    <p><strong>1. My quality of health is similar to what it is now. i.e. I have no end-stage medical conditions and my mental faculties are intact. I am able to care for myself.</strong></p>
+    <p>If I develop an acute medical illness that may be treated, and my doctors think I have a reasonable chance of surviving the illness and leaving the hospital, I wish the following: (Check any that apply:</p>
+    <%= f.check_box :ami_cc_only %>Comfort care only <br />
+    <%= f.check_box :ami_cc_plus,checked_value: "1",unchecked_value: "0" %>Comfort care, to include intravenous fluids and tube feedings<br />
+    <%= f.check_box :ami_reg_med %>Regular medical care <br />
+    <%= f.check_box :ami_invasive,checked_value: "1",unchecked_value: "0" %>Invasive procedures like surgery or heart catheterizations<br />
+    <%= f.check_box :ami_respirator,checked_value: "1",unchecked_value: "0" %>Temporary support from a respirator<br />
+    <%= f.check_box :ami_dialysis,checked_value: "1",unchecked_value: "0" %>Temporary support<br />
+    <%= f.check_box :ami_cpr,checked_value: "1",unchecked_value: "0" %>CPR if my heart stops<br />
+  </div>
+  <div class="field">
+    <p>If I suffer some form of brain injury (stroke, bleeding, cardiac arrest, etc.) that makes it unlikely I’ll ever regain the ability to make decisions for myself, I wish the following: (Check any that apply):</p>
+    <%= f.check_box :bi_cc_only %>Comfort care only <br />
+    <%= f.check_box :bi_cc_plus %>Comfort care, to include intravenous fluids and tube feedings<br />
+    <%= f.check_box :bi_reg_med %>Regular medical care <br />
+    <%= f.check_box :bi_invasive %>Invasive procedures like surgery or heart catheterizations<br />
+    <%= f.check_box :bi_respirator %>Temporary support from a respirator<br />
+    <%= f.check_box :bi_dialysis %>Temporary support<br />
+    <%= f.check_box :bi_cpr %>CPR if my heart stops<br />
+  </div>
+  <div class="actions">
+    <%= f.submit "Submit First Scenario" %>
+  </div>
+
+<% end %>

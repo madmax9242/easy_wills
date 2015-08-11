@@ -1,0 +1,16 @@
+
+<% if logged_in? %>
+<h1 class="header-text">Hello, <%= current_user.first_name %>!</h1>
+<h3 class="header-text">Let's get started</h3>
+
+  <h3 class="header-text">Click the link below to continue to the Living Will Form.</h3><br><br>
+  <div class="middle">
+    <button class="form-start"><%= link_to 'Fill out form', new_form_path %></button>
+  </div>
+  
+<% else %>
+  <p><h3 class="header-text">Click the link below to register a new profile and start your Living Will.</h3></p>
+  <div class="middle">
+    <button class="middle"><%= link_to 'New User', new_user_path %></button>
+  </div>
+<% end %>
