@@ -26,17 +26,18 @@
 	    </div>
 
 	<div class="hidden" id="start-form">
-		<h3 class="header-text">Click the link below to continue to the Living Will Form.<h3><br>
+		<h3 class="header-text">Click the link below to continue to the Living Will Form.</h3><br>
 			
 	  <div class="container-fluid">
 	      <span class="back-button"> Back </span>
-	      <button class="button-override next-button"><%= link_to 'Fill out form', new_form_path %></button></br>
+	      <button class="button-override float-right"><%= link_to 'Begin', new_form_path %></button></br>
 	  </div>
 
 	</div>
   
 <% else %>
   <p><h3 class="header-text">Click the link below to register a new profile and start your Living Will.</h3></p>
-    <button class="button-override next-button"><%= link_to 'New User', new_user_path %></button>
-
+  <div class="middle">
+    <button class="button-override"><%= link_to 'New User', new_user_path %></button>
+  </div>
 <% end %>

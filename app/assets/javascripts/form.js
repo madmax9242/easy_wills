@@ -1,12 +1,15 @@
 
+$(document).ready(initialize);
+$(document).on('page:load', initialize);
 
-$(function() {
+
+function initialize() {
 	form_change();
 	intro_events();
 	general_events();
 
 
-});
+};
 
 function form_change() {
 
