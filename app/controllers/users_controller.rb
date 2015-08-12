@@ -9,6 +9,7 @@ class UsersController < ApplicationController
 
   # GET /users/1
   def show
+    #redirect_to :users
   end
 
   # GET /users/new
@@ -60,7 +61,8 @@ class UsersController < ApplicationController
     end
   end
 
-  def form
+  def quality_of_life
+    @user = current_user
 
   end
 

@@ -6,6 +6,8 @@ Rails.application.routes.draw do
 
   get 'user_sessions/destroy'
 
+
+
   # Set form path so alternative forms can't be hardcoded into URL
   get 'forms' => 'forms#show'
   get 'forms/edit' => 'forms#edit'
@@ -13,19 +15,21 @@ Rails.application.routes.draw do
 
   get 'users/edit' => 'users#edit'
 
+  get 'users/:id/quality_of_life' => 'users#quality_of_life'
+  patch 'users/:id/quality_of_life' => 'users#update'
+
   resources :users
   resources :forms
-  resources :first_scenarios
-  resources :second_scenarios
-  resources :third_scenarios
-  resources :fourth_scenarios
+  # resources :first_scenarios
+  # resources :second_scenarios
+  # resources :third_scenarios
+  # resources :fourth_scenarios
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
   root 'users#index'
   resources :user_sessions
-  get 'users/form' => 'users#form'
   get 'login' => 'user_sessions#new', :as => :login
   post 'logout' => 'user_sessions#destroy', :as => :logout
 
