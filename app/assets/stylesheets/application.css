@@ -26,6 +26,26 @@
 
  }
 
+ .brandImage {
+ 	height: 1.5em;
+ 	width: 1.5em;
+ }
+
+ .float-right {
+ 	float: right;
+ }
+
+ .float-left {
+ 	float: left;
+ }
+
+.button-override {
+	background-color: green;
+	color: white;
+	margin: 0 auto;
+	border-radius: 5px;
+}
+
 
  .back-button {
  	border-radius: 5px;
@@ -34,21 +54,10 @@
  	color: white;
  	cursor: pointer;
  	float: left;
- 	font-size: 2em;
- 	width: 65px;
+ 	font-size: 1em;
+ 	width: 40px;
  	height: 25px;
  }
-
-
- .brandImage {
- 	height: 1.5em;
- 	width: 1.5em;
- }
-
-.button-override {
-	background-color: green;
-	color: white;
-}
 
  .next-button {
  	border-radius: 5px;
@@ -57,9 +66,10 @@
  	color: white;
  	cursor: pointer;
  	float: right;
- 	font-size: 2em;
- 	width: 65px;
+ 	font-size: 1em;
+ 	width: 40px;
  	height: 25px;
+
  }
  
  .new-form  {

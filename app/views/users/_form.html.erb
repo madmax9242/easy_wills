@@ -78,16 +78,6 @@
       <%= f.radio_button :quality_of_life, 'acceptable', :checked => true%><strong>Acceptable:</strong>  I need assistance with activities of daily living (bathing, dressing, using the toilet, etc.).  I am also limited in the things I can do but can still do things that are important to me.<br><br>
       <%= f.radio_button :quality_of_life, 'poor' %><strong>Poor:</strong>  I need assistance with most activities of daily living and I can do very few things that are important to me.<br><br>
       <%= f.radio_button :quality_of_life, 'unacceptable' %><strong>Unacceptable:</strong>  Most days I can’t do anything that is important to me or gives me joy.
-    
-
-
-      <div id="type_of_beer" class="field">
-        <%= f.select :quality_of_life do %>
-          <%[['Excellent', 'Excellent'], ['Good', 'Good'], ['Acceptable', 'Acceptable'], ['Poor', 'Poor'], ['Unacceptable', 'Unacceptable']].each do |c| %>
-          <%= content_tag(:option, c.first, value: c.last) %>
-           <% end %>
-        <% end %>
-      </div>
 
     </div>
 
