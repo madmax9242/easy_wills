@@ -1,7 +1,7 @@
 
 $(document).ready(initialize);
 $(document).on('page:load', initialize);
-
+// Have to load the listening events when page loads because TurboLinks messes with the document ready status
 
 function initialize() {
 	form_change();
@@ -12,6 +12,7 @@ function initialize() {
 
 };
 
+// Listens for next/back button presses 
 function form_change() {
 
 	$('#to_2').on('click', function(event) {
@@ -92,12 +93,14 @@ function new_user_events() {
 }
 
 function general_events() {
+	// Eliminates enter key press
 	$('html').bind('keypress', function(e) {
 		if(e.keyCode == 13) {
 			return false;
 		}
 	});
 
+	// Makes the spans behave like buttons
 	$('.next-button, .back-button, button').on('mouseover', function() {
 		$(this).addClass('underline');
 	});
