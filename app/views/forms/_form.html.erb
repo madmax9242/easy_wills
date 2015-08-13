@@ -4,8 +4,6 @@
   <div id="first">
     <div class="field">
 
-      <p><strong>1. My quality of health is similar to what it is now. i.e. I have no end-stage medical conditions and my mental faculties are intact. I am able to care for myself.</strong></p>
-
       <p><h4><strong>1. My quality of health is similar to what it is now. i.e. I have no end-stage medical conditions and my mental faculties are intact. I am able to care for myself.</strong></h4></p>
 
       <p>If I develop an acute medical illness that may be treated, and my doctors think I have a reasonable chance of surviving the illness and leaving the hospital, I wish the following: (Check any that apply:</p>
@@ -28,14 +26,12 @@
       <%= f.check_box :gh_bi_cpr %>CPR if my heart stops<br />
     </div>
     <div class="container-fluid">
-            <span class="back-button"> Back </span>
-            <span id="to_2" class="next-button"> Next </span>
+            
+      <span id="to_2" class="next-button"> Next </span>
     </div>
   </div>
   <div class="hidden" id="second">
     <div class="field">
-
-      <p><strong>2. My general health has deteriorated to the point I need assistance in caring for myself but I am still at home and my mental faculties are intact.</strong></p>
 
       <p><h4><strong>2. My general health has deteriorated to the point I need assistance in caring for myself but I am still at home and my mental faculties are intact.</strong></h4></p>
 
@@ -60,7 +56,7 @@
     </div>
 
     <div class="container-fluid">
-            <span class="back-button"> Back </span>
+            <span id="back_to_1" class="back-button"> Back </span>
             <span id="to_3" class="next-button"> Next </span>
     </div>
 
@@ -68,8 +64,6 @@
 
   <div class="hidden" id="third">
     <div class="field">
-
-      <p><strong>3. I have been diagnosed with an end-stage medical condition but have been told I could live for a year or more. I still live at home and my mental faculties are intact.</strong></p>
 
       <p><h4><strong>3. I have been diagnosed with an end-stage medical condition but have been told I could live for a year or more. I still live at home and my mental faculties are intact.</strong></h4></p>
 
@@ -94,7 +88,7 @@
     </div>
 
     <div class="container-fluid">
-      <span class="back-button"> Back </span>
+      <span id="back_to_2" class="back-button"> Back </span>
       <span id="to_4" class="next-button"> Next </span>
     </div>
 
@@ -102,8 +96,6 @@
 
   <div class="hidden" id="fourth">
     <div class="field">
-
-      <p><strong>4. I am dying from an end-stage medical condition with no hope of improvement.</strong></p>
 
       <p><h4><strong>4. I am dying from an end-stage medical condition with no hope of improvement.</strong></h4></p>
 
@@ -126,12 +118,9 @@
       <%= f.check_box :nhi_bi_dialysis %>Temporary support<br />
       <%= f.check_box :nhi_bi_cpr %>CPR if my heart stops<br />
     </div>
-    <div class="fluid-container">
-      <span class="back-button"> Back </span>
+    <div class="container-fluid">
+      <span id="back_to_3" class="back-button"> Back </span>
       <button class="submit-button" id="to_4">Finish</button>
-<!--       <div class="actions">
-        <%#= f.submit %>
-      </div> -->
     </div>
   </div>
 <% end %>

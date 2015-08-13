@@ -1,15 +1,63 @@
-<div class="new-form">
-  <%= form_tag user_sessions_path, :method => :post do %>
-    <div class="field">
-      <%= label_tag :email %><br />
-      <%= text_field_tag :email %>
-    </div>
-    <div class="field">
-      <%= label_tag :password %><br />
-      <%= password_field_tag :password %>
-    </div>
-    <div class="actions">
-      <%= submit_tag "Login" %>
+<%= form_for(@user) do |f| %>
+  <% if @user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+      <ul>
+      <% @user.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
     </div>
   <% end %>
-</div>
+  <div>
+    <div id="basic_info" class="new-form">
+      <div class="field">
+        <%= f.label :first_name %><br>
+        <%= f.text_field :first_name %>
+      </div>
+      <div class="field">
+        <%= f.label :last_name %><br>
+        <%= f.text_field :last_name %>
+      </div>
+      <div class="field">
+        <%= f.label :email %><br>
+        <%= f.text_field :email %>
+      </div>
+      <div class="field">
+         <%= f.label :password %><br />
+         <%= f.password_field :password %>
+      </div>
+      <div class="field">
+         <%= f.label :password_confirmation %><br />
+         <%= f.password_field :password_confirmation %>
+      </div><br>
+      <div class="container-fluid">
+        <span id="to_QL" class="next-button"> Next </span>
+      </div>
+
+    </div>
+    <div id="quality" class="hidden">
+      <div class="field">
+        <strong>Quality of Life</strong><br>
+
+        <p><strong>Why is this important?</strong>  It is not unusual for several years to have passed from the time a person filled out their living will and when it is first needed to help decide how to treat them medically.  Sometimes a person’s quality of life may have changed significantly over that time.  If their quality of life has gotten significantly worse they may now not want to be treated as aggressively as they indicated in their living will.</p>
+
+        <p>While a person should ideally complete a new living will any time their quality of life changes significantly most people forget to do so. If you have been hospitalized and your surrogate and doctors are using your living will to help determine what care you would want it could be helpful to them if they knew that your quality of life was now much worse than when you completed your living will.</p>
+
+        <br><br>
+        <%= f.radio_button :quality_of_life, 'excellent' %><strong>Excellent:</strong>  I am able to fully care for myself and have no limitations on what I am able to do.<br><br>
+        <%= f.radio_button :quality_of_life, 'good' %><strong>Good:</strong> I am able to fully care for myself and can do most things I would want to do.<br><br>
+        <%= f.radio_button :quality_of_life, 'acceptable', :checked => true%><strong>Acceptable:</strong>  I need assistance with activities of daily living (bathing, dressing, using the toilet, etc.).  I am also limited in the things I can do but can still do things that are important to me.<br><br>
+        <%= f.radio_button :quality_of_life, 'poor' %><strong>Poor:</strong>  I need assistance with most activities of daily living and I can do very few things that are important to me.<br><br>
+        <%= f.radio_button :quality_of_life, 'unacceptable' %><strong>Unacceptable:</strong>  Most days I can’t do anything that is important to me or gives me joy.
+
+      </div>
+    
+      <div class="container-fluid">
+        <span id="back_to_basics" class="back-button"> Back </span>
+        <button class="button-override float-right">Continue</button>
+      </div>
+    </div>
+  </div>
+<% end %>
