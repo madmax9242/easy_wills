@@ -80,16 +80,24 @@ function new_user_events() {
 		event.preventDefault;
 		$('#basic_info').addClass("hidden");
 		$('#quality').removeClass("hidden");
+		$('#starting').addClass("hidden");
 	});
 
 	$('#back_to_basics').on('click', function(event) {
 		event.preventDefault;
 		$('#quality').addClass("hidden");
 		$('#basic_info').removeClass("hidden");
+		$('#starting').removeClass("hidden");
 	})
 }
 
 function general_events() {
+	$('html').bind('keypress', function(e) {
+		if(e.keyCode == 13) {
+			return false;
+		}
+	});
+
 	$('.next-button, .back-button, button').on('mouseover', function() {
 		$(this).addClass('underline');
 	});
